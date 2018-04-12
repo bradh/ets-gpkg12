@@ -151,6 +151,13 @@ public class RelatedTablesTests extends CommonFixture {
         }
     }
 
+    /**
+     * Test case {@code /conf/table-defs/ger}
+     *
+     * Verify that the gpkgext_relations table has the right structure.
+     *
+     * @throws SQLException If an SQL query causes an error
+     */
     @Test(description = "See OGC 18-000: Requirement 4")
     public void relations_table_definition() throws SQLException {
 
