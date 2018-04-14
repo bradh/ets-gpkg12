@@ -89,20 +89,20 @@ public class RelatedTablesMediaTests extends CommonFixture {
                 if ("data".equals(name)) {
                     assertEquals(resultSet.getString("type"), "BLOB", ErrorMessage.format(ErrorMessageKeys.RELATED_TABLES_MEDIA_COLUMN_INVALID, mediaTable, "data type"));
                     assertEquals(resultSet.getInt("notnull"), 1, ErrorMessage.format(ErrorMessageKeys.RELATED_TABLES_MEDIA_COLUMN_INVALID, mediaTable, "data notnull"));
-                    assertEquals(resultSet.getString("dflt_value"), null, ErrorMessage.format(ErrorMessageKeys.RELATED_TABLES_MEDIA_COLUMN_INVALID, mediaTable, "base_id default value"));
-                    assertEquals(resultSet.getInt("pk"), 0, ErrorMessage.format(ErrorMessageKeys.RELATED_TABLES_MEDIA_COLUMN_INVALID, mediaTable, "base_id primary key"));
+                    assertEquals(resultSet.getString("dflt_value"), null, ErrorMessage.format(ErrorMessageKeys.RELATED_TABLES_MEDIA_COLUMN_INVALID, mediaTable, "data default value"));
+                    assertEquals(resultSet.getInt("pk"), 0, ErrorMessage.format(ErrorMessageKeys.RELATED_TABLES_MEDIA_COLUMN_INVALID, mediaTable, "data primary key"));
                     // TODO: unique key
                     passFlag |= (1);
                 } else if ("content_type".equals(name)) {
                     assertEquals(resultSet.getString("type"), "TEXT", ErrorMessage.format(ErrorMessageKeys.RELATED_TABLES_MEDIA_COLUMN_INVALID, mediaTable, "content_type type"));
                     assertEquals(resultSet.getInt("notnull"), 1, ErrorMessage.format(ErrorMessageKeys.RELATED_TABLES_MEDIA_COLUMN_INVALID, mediaTable, "content_type notnull"));
-                    assertEquals(resultSet.getString("dflt_value"), null, ErrorMessage.format(ErrorMessageKeys.RELATED_TABLES_MEDIA_COLUMN_INVALID, mediaTable, "base_id default value"));
-                    assertEquals(resultSet.getInt("pk"), 0, ErrorMessage.format(ErrorMessageKeys.RELATED_TABLES_MEDIA_COLUMN_INVALID, mediaTable, "base_id primary key"));
+                    assertEquals(resultSet.getString("dflt_value"), null, ErrorMessage.format(ErrorMessageKeys.RELATED_TABLES_MEDIA_COLUMN_INVALID, mediaTable, "content_type default value"));
+                    assertEquals(resultSet.getInt("pk"), 0, ErrorMessage.format(ErrorMessageKeys.RELATED_TABLES_MEDIA_COLUMN_INVALID, mediaTable, "content_type primary key"));
                     // TODO: unique key
                     passFlag |= (1 << 1);
                 }
             }
-            assertTrue((passFlag & flagMask) == flagMask, ErrorMessage.format(ErrorMessageKeys.RELATED_TABLES_MEDIA_COLUMN_INVALID, mediaTable, "missing column(s)"));
+            assertEquals((passFlag & flagMask), flagMask, ErrorMessage.format(ErrorMessageKeys.RELATED_TABLES_MEDIA_COLUMN_INVALID, mediaTable, "missing column(s)"));
         }
     }
 }
