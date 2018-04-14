@@ -66,6 +66,8 @@ public class CommonFixture {
 
     protected Connection databaseConnection;
     
+    protected ITestContext testContext;
+    
     /**
      * Initializes the common test fixture. The fixture includes the following
      * components:
@@ -84,6 +86,7 @@ public class CommonFixture {
      */
     @BeforeClass
     public void initCommonFixture(final ITestContext testContext) throws SQLException, IOException {
+        this.testContext = testContext;
         final Object testFile = testContext.getSuite().getAttribute(SuiteAttribute.TEST_SUBJ_FILE.getName());
         if (testFile == null || !File.class.isInstance(testFile)) {
             throw new IllegalArgumentException(
