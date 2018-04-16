@@ -25,7 +25,10 @@
           <conformanceClass>Schema</conformanceClass>
           <conformanceClass>WKT for Coordinate Reference Systems</conformanceClass>
           <conformanceClass>Tiled Gridded Elevation Data</conformanceClass>
-          <conformanceClass>Related Tables</conformanceClass>
+          <conformanceClass>Related Tables Core</conformanceClass>
+          <conformanceClass>Related Tables Media</conformanceClass>
+          <conformanceClass>Related Tables Simple Attributes</conformanceClass>
+          <conformanceClass>Related Tables Features</conformanceClass>
         </BasicConformanceClasses>
       </suite>
       <revision>
