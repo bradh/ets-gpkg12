@@ -120,6 +120,10 @@ The general structure of the test suite is shown in Table 1.
       <td>Tiled Gridded Elevation Data</td>
       <td>org.opengis.cite.gpkg12.extensions.elevation.*</td>
     </tr>
+    <tr>
+      <td>Related Tables</td>
+      <td>org.opengis.cite.gpkg12.extensions.relatedtables.*</td>
+    </tr>
   </tbody>
 </table>
 
